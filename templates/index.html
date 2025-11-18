@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="card">
+  <h3>Supermart Grocery Sales Dashboard</h3>
+  <p>Total historical rows: <strong>{{ total }}</strong></p>
+  <div class="row">
+    {% for c in charts %}
+      <div class="col-md-4 mb-2"><img src="{{ url_for('static', filename=c) }}" class="img-fluid rounded"></div>
+    {% endfor %}
+  </div>
+  <div class="mt-3">
+    <a class="btn btn-primary" href="/predict">Make Manual Prediction</a>
+    <a class="btn btn-secondary" href="/sql">SQL Explorer</a>
+  </div>
+</div>
+{% endblock %}

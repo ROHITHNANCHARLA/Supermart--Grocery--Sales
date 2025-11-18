@@ -1,0 +1,16 @@
+<svg width="200" height="70" viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Growth arrow integrated with cart -->
+  <g transform="translate(15, 20)">
+    <path d="M5 20 L15 20 L17 30 L3 30 Z" fill="url(#grad3)" opacity="0.8"/>
+    <path d="M20 15 L25 10 L30 15 L25 20 Z" fill="#f59e0b"/>
+    <path d="M25 10 L25 30" stroke="#f59e0b" stroke-width="2"/>
+  </g>
+  <text x="55" y="35" font-family="Arial" font-size="20" font-weight="bold" fill="url(#grad3)">Supermart</text>
+  <text x="55" y="50" font-family="Arial" font-size="11" fill="#6b7280">Grocery Sales Intelligence</text>
+</svg>

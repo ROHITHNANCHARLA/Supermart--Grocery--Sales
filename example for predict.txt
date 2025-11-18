@@ -1,0 +1,50 @@
+🧩 Example 1
+
+Product: Bread
+Store Location: Downtown
+Date: 12-05-2023
+Qty: 45
+Unit Price: 5.30
+
+🧠 Use Case: Predict total sales for 45 loaves of bread sold in the Downtown branch in May 2023.
+
+🧩 Example 2
+
+Product: Toothpaste
+Store Location: Mall
+Date: 15-07-2023
+Qty: 25
+Unit Price: 6.75
+
+🧠 Use Case: Predict revenue for July 2023 toothpaste sales at the Mall outlet.
+
+🧩 Example 3
+
+Product: Soap
+Store Location: Airport
+Date: 22-03-2024
+Qty: 60
+Unit Price: 5.50
+
+🧠 Use Case: Estimate the March 2024 total for Soap sales in the Airport store — this one usually generates the chart successfully because both product='Soap' and store_location='Airport' are common in your DB.
+
+🧩 Example 4
+
+Product: Shampoo
+Store Location: Uptown
+Date: 10-09-2023
+Qty: 35
+Unit Price: 8.20
+
+🧠 Use Case: Predict the total shampoo sales in September 2023 for Uptown.
+Tip: Shampoo usually has high correlation with price and quantity features in model training.
+
+🧩 Example 5
+
+Product: Rice
+Store Location: Suburb
+Date: 05-11-2023
+Qty: 100
+Unit Price: 4.90
+
+🧠 Use Case: Predict bulk grocery sales (like rice bags) for Suburb in November 2023 — this generates a rich comparison chart with the pie share chart.

@@ -1,0 +1,20 @@
+[
+  "year",
+  "month",
+  "quantity",
+  "unit_price",
+  "product_top_Bananas",
+  "product_top_Bread",
+  "product_top_Butter",
+  "product_top_Eggs",
+  "product_top_Milk",
+  "product_top_Rice",
+  "product_top_Shampoo",
+  "product_top_Soap",
+  "product_top_Sugar",
+  "product_top_Toothpaste",
+  "store_location_top_Downtown",
+  "store_location_top_Mall",
+  "store_location_top_Suburb",
+  "store_location_top_Uptown"
+]

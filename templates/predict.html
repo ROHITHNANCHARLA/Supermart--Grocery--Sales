@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="card p-3">
+  <h4>Manual Prediction (Total Sales)</h4>
+  <form method="post" class="row g-2">
+    <div class="col-md-4"><label>Product</label><input name="product" class="form-control" list="products"></div>
+    <div class="col-md-3"><label>Store Location</label><input name="store_location" class="form-control" list="stores"></div>
+    <div class="col-md-2"><label>Date</label><input type="date" name="date" class="form-control"></div>
+    <div class="col-md-1"><label>Qty</label><input name="quantity" type="number" step="1" class="form-control"></div>
+    <div class="col-md-2"><label>Unit Price</label><input name="unit_price" type="number" step="0.01" class="form-control"></div>
+    <div class="col-12"><button class="btn btn-primary mt-2" type="submit">Predict & Save</button></div>
+  </form>
+</div>
+{% endblock %}

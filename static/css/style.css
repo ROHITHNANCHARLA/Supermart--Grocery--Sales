@@ -1,0 +1,150 @@
+:root {
+  --g1: #02ffc4;
+  --g2: #66fff5;
+  --g3: #ef476f;
+  --text-dark: #111;
+}
+
+/* 🌈 General body styling */
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #f6f8f7;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* 🌟 Header section */
+.header {
+  background: linear-gradient(90deg, var(--g1), var(--g2), var(--g3));
+  padding: 18px 0;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header .header-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+/* 🛍️ Logo & title container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* 🔗 Navigation links */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+/* ✨ Underline hover effect */
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* 🧾 Page content */
+.container {
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--g1), #1f8f3a);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e6e6e6;
+  padding: 8px;
+  text-align: left;
+}
+
+.footer {
+  padding: 16px 0;
+  text-align: center;
+  color: #666;
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .header .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo {
+    height: 60px;
+  }
+  .nav {
+    margin-top: 10px;
+    gap: 18px;
+  }
+}

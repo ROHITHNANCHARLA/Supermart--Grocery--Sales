@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container mt-4">
+  <h2 class="fw-bold mb-3">📊 Supermart SQL Explorer</h2>
+  <p class="text-muted">Explore deep insights extracted from the Supermart transactional dataset.</p>
+
+  <!-- 🏪 Table 1 -->
+  <div class="card mt-4 p-3 shadow-sm">
+    <h4 class="text-primary mb-3">🏪 Top 20 Stores by Total Sales</h4>
+    {% if df1 %}
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr><th>Store</th><th>Total Sales (₹)</th></tr>
+        </thead>
+        <tbody>
+          {% for row in df1 %}
+          <tr>
+            <td>{{ row.Store }}</td>
+            <td>₹{{ "{:,.2f}".format(row.Total_Sales) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-danger">No data found for stores.</p>
+    {% endif %}
+  </div>
+
+  <!-- 📅 Table 2 -->
+  <div class="card mt-5 p-3 shadow-sm">
+    <h4 class="text-success mb-3">📅 Monthly Sales Trend</h4>
+    {% if df2 %}
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr><th>Year</th><th>Month</th><th>Total Sales (₹)</th></tr>
+        </thead>
+        <tbody>
+          {% for row in df2 %}
+          <tr>
+            <td>{{ row.Year }}</td>
+            <td>{{ row.Month }}</td>
+            <td>₹{{ "{:,.2f}".format(row.Total_Sales) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-danger">No monthly sales data available.</p>
+    {% endif %}
+  </div>
+
+  <!-- 🧾 Table 3 -->
+  <div class="card mt-5 p-3 shadow-sm">
+    <h4 class="text-warning mb-3">🧾 Top 15 Products by Total Sales</h4>
+    {% if df3 %}
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr><th>Product</th><th>Total Sales (₹)</th><th>Quantity Sold</th></tr>
+        </thead>
+        <tbody>
+          {% for row in df3 %}
+          <tr>
+            <td>{{ row.Product }}</td>
+            <td>₹{{ "{:,.2f}".format(row.Total_Sales) }}</td>
+            <td>{{ row.Total_Quantity }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-danger">No product data available.</p>
+    {% endif %}
+  </div>
+
+  <!-- 💰 Table 4 -->
+  <div class="card mt-5 p-3 shadow-sm mb-5">
+    <h4 class="text-info mb-3">💰 Average Unit Price by Store</h4>
+    {% if df4 %}
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr><th>Store</th><th>Average Unit Price (₹)</th></tr>
+        </thead>
+        <tbody>
+          {% for row in df4 %}
+          <tr>
+            <td>{{ row.Store }}</td>
+            <td>₹{{ "{:,.2f}".format(row.Avg_Unit_Price) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-danger">No price data available.</p>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

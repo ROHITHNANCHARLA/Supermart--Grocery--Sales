@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="card p-3">
+  <h4>Saved Predictions</h4>
+  <p><a class="btn btn-outline-primary" href="/download_predictions">⬇ Download CSV</a></p>
+  {% if records %}
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead><tr><th>ID</th><th>Time</th><th>Product</th><th>Store</th><th>Date</th><th>Qty</th><th>Unit Price</th><th>Predicted</th></tr></thead>
+      <tbody>
+        {% for r in records %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.timestamp }}</td>
+          <td>{{ r.product }}</td>
+          <td>{{ r.store_location }}</td>
+          <td>{{ r.date }}</td>
+          <td>{{ r.quantity }}</td>
+          <td>{{ r.unit_price }}</td>
+          <td>{{ r.predicted_total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+    <p>No saved predictions yet.</p>
+  {% endif %}
+
+  <hr class="my-3">
+
+  <h5>Generated Charts (grouped)</h5>
+  {% if chart_groups %}
+    {% for key, imgs in chart_groups.items() %}
+      <div class="mb-3">
+        <h6 class="mb-2">{{ key }}</h6>
+        <div class="row">
+          {% for img in imgs %}
+            <div class="col-md-4 mb-2">
+              <div class="card">
+                <img src="{{ url_for('outputs', filename=img.replace('\\','/').split('/')[-1]) }}" class="card-img-top img-fluid" alt="{{ img }}">
+                <div class="card-body p-2"><small class="text-muted">{{ img.split('_')[-1].split('.')[0] }}</small></div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No charts yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
